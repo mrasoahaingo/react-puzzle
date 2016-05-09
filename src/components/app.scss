@@ -1,0 +1,152 @@
+html, body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background: #ECEFF1;
+  color: #37474F;
+  text-align: center;
+  perspective: 80rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+label {
+  font-size: .8em;
+  input {
+    margin-left: 5px;
+  }
+}
+
+button, input {
+  cursor: pointer;
+  border: 1px solid rgba(#000, .1);
+  background: #fff;
+  border-radius: 3px;
+  padding: 0px 12px;
+  line-height: 30px;
+  text-transform: uppercase;
+  outline: none;
+  pointer-events: auto;
+  text-align: center;
+
+  &:hover {
+    color: #fff;
+    background: rgba(#000, .7);
+  }
+}
+
+input[type="number"] {
+  padding-right: 0;
+  width: 50px;
+}
+
+.game {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+
+  &__layer {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 40px;
+
+    > *:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+
+  &__container {
+    transform-style: preserve-3d;
+    pointer-events: none;
+    transition: all .8s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    &--win {
+      transform: rotateY(-180deg);
+    }
+  }
+
+  &__platform {
+    transform-style: preserve-3d;
+  }
+
+  &__win {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #66BB6A;
+    font-size: 2em;
+    font-weight: bold;
+    transform: rotateY(180deg) translateZ(-1px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    span {
+      transform: translateZ(1em);
+      backface-visibility: hidden;
+    }
+  }
+
+  &__tiles {
+    display: block;
+    margin: 30px auto;
+    position: relative;
+    transform: translateZ(.05em);
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+  }
+
+  &__tile {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: #0288D1;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+
+  &__text {
+    font-size: 1.7em;
+    font-weight: bold;
+    text-anchor: middle;
+    color: white;
+    alignment-baseline: central;
+    transform: translateZ(.5em);
+    backface-visibility: hidden;
+  }
+}
