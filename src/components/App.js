@@ -18,6 +18,7 @@ class App extends Component {
     super(props)
     this.state = this.getGameState(props)
     this.rotateGame = this.rotateGame.bind(this)
+    this.orientGame = this.orientGame.bind(this)
     this.moveTile = this.moveTile.bind(this)
     this.shuffle = this.shuffle.bind(this)
     this.changeTileNumber = this.changeTileNumber.bind(this)
@@ -27,6 +28,13 @@ class App extends Component {
   componentDidMount() {
     document.addEventListener('keydown', this.moveTile)
     document.addEventListener('mousemove', this.rotateGame)
+    window.addEventListener('deviceorientation', this.orientGame)
+  }
+
+  orientGame(e) {
+    this.gameTiles.style.transform =
+      "rotateY(" + ( -e.gamma ) + "deg)" +
+      "rotateX(" + e.beta + "deg) ";
   }
 
   rotateGame(e) {
