@@ -34,7 +34,7 @@ class App extends Component {
   orientGame(e) {
     this.gameTiles.style.transform =
       "rotateY(" + ( -e.gamma ) + "deg)" +
-      "rotateX(" + e.beta + "deg) ";
+      "rotateX(" + (e.beta - 50) + "deg) ";
   }
 
   rotateGame(e) {
