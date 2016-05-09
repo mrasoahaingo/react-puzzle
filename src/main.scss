@@ -1,5 +1,45 @@
-$color: #39a5e2;
+html, body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background: #ECEFF1;
+  color: #37474F;
+  text-align: center;
+  perspective: 80rem;
+  height: 100vh;
+  width: 100vw;
+}
 
-body {
-  background-color: $color;
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+label {
+  font-size: .8em;
+  input {
+    margin-left: 5px;
+  }
+}
+
+button, input {
+  cursor: pointer;
+  border: 1px solid rgba(#000, .1);
+  background: #fff;
+  border-radius: 3px;
+  padding: 0px 12px;
+  line-height: 30px;
+  text-transform: uppercase;
+  outline: none;
+  pointer-events: auto;
+  text-align: center;
+
+  &:hover {
+    color: #fff;
+    background: rgba(#000, .7);
+  }
+}
+
+input[type="number"] {
+  padding-right: 0;
+  width: 50px;
 }
