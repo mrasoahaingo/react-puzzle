@@ -21,8 +21,9 @@
     "react-motion": "^0.4.2"
   },
   "devDependencies": {
+    "describe-with-dom": "^1.0.0",
     "gh-pages": "^0.11.0",
-    "tarec-plugin-mocha-test": "geowarin/tarec-plugin-mocha-test",
+    "tarec-plugin-mocha-test": "1.1.0",
     "tarec-plugin-sass": "geowarin/tarec-plugin-sass"
   }
 }
